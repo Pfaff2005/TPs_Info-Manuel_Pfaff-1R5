@@ -3,16 +3,25 @@
 int main() {
     float peso, altura, imc;
 
-    printf("Ingrese el peso en kg: ");
-    scanf("%f", &peso);
+    do {
+        printf("Ingrese el peso en kg: ");
+        scanf("%f", &peso);
+        if (peso < 0) {
+            printf("Error: El peso no puede ser negativo. Intente nuevamente.\n");
+        }
+    } while (peso < 0);
 
-    printf("Ingrese la altura en metros: ");
-    scanf("%f", &altura);
+    do {
+        printf("Ingrese la altura en metros: ");
+        scanf("%f", &altura);
+        if (altura <= 0) {
+            printf("Error: La altura debe ser un número positivo. Intente nuevamente.\n");
+        }
+    } while (altura <= 0);
 
     imc = peso / (altura * altura);
 
-   
-    printf("Índice | Condición\n");
+    printf("\nÍndice | Condición\n");
     printf("-----------------------------\n");
     printf("<18.5  | Bajo peso\n");
     printf("18.5 a 24.9 | Normal\n");
